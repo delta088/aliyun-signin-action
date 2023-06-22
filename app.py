@@ -434,9 +434,7 @@ def main():
             github.update_secret('REFRESH_TOKENS', ','.join(new_users))
             logging.info('refresh tokens 更新成功.')
         except Exception as e:
-            err = f'Action 更新 Github Secrets 失败: {e}'
-            logging.error(err)
-            push(config, err, err, '阿里云盘签到')
+            logging.error(f'更新 refresh tokens 失败: {e}')
 
 
 if __name__ == '__main__':
