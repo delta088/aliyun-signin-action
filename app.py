@@ -415,12 +415,17 @@ def main():
     text = '\n\n'.join([i['text'] for i in results])
     text_html = '\n\n'.join([i['text_html'] for i in results])
 
-    # Do Not Reward 模式取消提示
-    if do_not_reward:
-        text += '\n\n当前使用的 仅签到不领取奖励 模式由于维护问题已计划最快于 2023-07-01 取消, 请在此查看更多信息: ' \
-                'https://github.com/ImYrS/aliyun-auto-signin/issues/78'
-        text_html += '\n\n当前使用的 仅签到不领取奖励 模式由于维护问题已计划最快于 2023-07-01 取消, 请在此查看更多信息: ' \
-                     'https://github.com/ImYrS/aliyun-auto-signin/issues/78'
+    if args.action and not environ['GP_TOKEN']:
+        text += (
+            '\n\n当前 Actions 尚未配置 GP_TOKEN, 请参考 '
+            'https://imyrs.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
+            ' 尽快处理.'
+        )
+        text_html += (
+            '\n\n当前 Actions 尚未配置 GP_TOKEN, 请参考 '
+            'https://imyrs.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
+            ' 尽快处理.'
+        )
 
     push(config, text, text_html, '阿里云盘签到')
 
