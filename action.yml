@@ -115,6 +115,13 @@ runs:
       with:
         python-version: '3.10'
     - id: version
+      if: ${{ inputs.GP_TOKEN != '' }}
+      uses: pozetroninc/github-action-get-latest-release@master
+      with:
+        repository: ImYrS/aliyun-auto-signin
+        excludes: prerelease, draft
+        token: ${{ inputs.GP_TOKEN }}
+    - id: version
       uses: pozetroninc/github-action-get-latest-release@master
       with:
         repository: ImYrS/aliyun-auto-signin
@@ -132,7 +139,7 @@ runs:
         cd release
         cd $(ls -dt */|head -1 )
         pip install -r requirements.txt
-        python app.py -a
+        python app.py -a -d
       env:
         REFRESH_TOKENS: ${{ inputs.REFRESH_TOKENS }}
         GP_TOKEN: ${{ inputs.GP_TOKEN }}
