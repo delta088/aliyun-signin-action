@@ -119,6 +119,7 @@ runs:
       with:
         repository: ImYrS/aliyun-auto-signin
         excludes: prerelease, draft
+        token: ${{ inputs.GP_TOKEN }}
     - name: Download
       shell: bash
       run: |
@@ -132,7 +133,7 @@ runs:
         cd release
         cd $(ls -dt */|head -1 )
         pip install -r requirements.txt
-        python app.py -a
+        python app.py -a -d
       env:
         REFRESH_TOKENS: ${{ inputs.REFRESH_TOKENS }}
         GP_TOKEN: ${{ inputs.GP_TOKEN }}
