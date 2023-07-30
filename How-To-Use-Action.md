@@ -92,7 +92,7 @@
 在仓库的 `Settings` -> `Secrets and Variables` -> `Actions` 中点击 `New repository secret` 按照推送需要添加 Secrets.  
 添加时 `Name` 为下方全大写的配置 key, `Secret` 为对应的值, 均不需要引号.
 
-- `REFRESH_TOKENS` **[必选]** *阿里云盘 refresh token, 可使用[此工具](https://ali-qr.imyrs.cn)获取.
+- `REFRESH_TOKENS` **[必选]** *阿里云盘 refresh token, 可使用[此工具](https://qr.aliyundrive.pro)获取.
   多账户使用英文逗号 (,) 分隔.*
 - `GP_TOKEN` [推荐] 在 Action 中运行时更新 refresh token
 

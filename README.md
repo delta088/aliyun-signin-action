@@ -42,7 +42,7 @@
         ```
 3. 修改配置文件
     1. 复制 `example.config.ini` 为 `config.ini`
-    2. 在配置文件中填入你的阿里云盘 `refresh token`, 可使用[此工具](https://ali-qr.imyrs.cn)获取. 多账户同时签到使用英文逗号分隔
+    2. 在配置文件中填入你的阿里云盘 `refresh token`, 可使用[此工具](https://qr.aliyundrive.pro)获取. 多账户同时签到使用英文逗号分隔
     3. 按需填写推送配置参数 `push_types`, 支持的推送渠道见下方, 不需要推送请留空
     4. 保存配置文件
 4. 运行并查看是否成功签到
